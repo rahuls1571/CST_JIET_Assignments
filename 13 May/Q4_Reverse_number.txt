@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+
+int reverse_number(int num){
+    int reverse =0;
+    while (num > 0)
+    {
+        int remainder = num % 10;
+        reverse = reverse * 10 + remainder;
+        num /= 10;
+    }
+ return reverse;
+}
+int main()
+{ 
+    int num,check_result;
+
+    cout<<("Enter an integer : ");
+    cin>>num;
+    check_result = reverse_number(num);
+    cout<<"Reverse Number : "<<check_result<<"\n";
+    if(num = check_result){
+        cout <<"Number is a palindrome !"<<"\n";
+    }
+    else{
+       cout <<"Number is not a palindrome !"<<"\n";
+    }
+  
+   return 0;
+}
