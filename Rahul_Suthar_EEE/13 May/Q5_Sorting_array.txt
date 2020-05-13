@@ -1,0 +1,53 @@
+#include<iostream>
+using namespace std;
+void Scanf(int num,int number[])
+{
+    for(int i=0; i <num; i++)
+     {
+       cin>>number[i];
+     }
+}
+void Printf(int num,int number[])
+{
+    for(int i=0; i <num; i++)
+     {
+       cout<<number[i]<<" ";
+     }
+}
+void Sort(int x, int number[])
+{
+     int i, j, t;                                            
+       for(i = 1; i < x; ++i){                               
+          for(j = i+1; j < x; ++j){                             
+             if(number[i] > number[j])                                
+              {
+                t = number[i];                                    
+                number[i] = number[j];                                 
+                number[j] = t;                                      
+              } 
+            }
+        }
+    cout<<"\n"<<"After Sorting : ";    
+    for( i =0; i <x; ++i ){
+        cout<<number[i]<<" ";
+    }
+    
+}
+
+int main() 
+{   
+   int num;
+   cout<<"Enter max input element value : ";
+   cin>>num;
+   int number[num];
+   
+   cout<<"Enter Element : ";
+   Scanf(num,number);
+   
+   cout<<"Before Sorting :";
+   Printf(num,number);
+   
+   Sort(num,number);
+   
+   return 0;
+} 

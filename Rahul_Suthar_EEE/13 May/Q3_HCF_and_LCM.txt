@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+
+int find_HCF(int x,int y){
+    if(x == 0)
+    {
+        return y;
+    }
+    while(x != y)
+    {
+        if(x > y)
+            x -= y;
+        else
+            y -= x;
+    }
+   return x;
+}
+
+int main()
+{
+    int n1, n2,hcf_result,lcm_result;
+  
+    cout << "Enter two numbers: ";
+    cin >> n1 >> n2;
+    
+    hcf_result = find_HCF(n1,n2);
+    lcm_result = (n1*n2)/hcf_result;
+    cout << "HCF = " << hcf_result<<"\n";
+    cout << "LCM = " << lcm_result<<"\n";
+    
+   return 0;
+}
